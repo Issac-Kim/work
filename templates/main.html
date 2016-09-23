@@ -1,9 +1,27 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Welcome!</title>
+    <title> Occupations </title>
   </head>
   <body>
-    <p>hi</p>
+    <h1> Occupations </h1>
+    <table style = "Width:100%">
+      <tr>
+	<td> Job Class </td>
+	<td> Percentage </td>
+      </tr>
+      {% for key in keys %}
+      <tr>
+	<td> {{key}} </td>
+	<td> {{keys[key]}} </td>
+      </tr>
+      {% endfor %}
+      <tr>
+	<td> Total </td>
+	<td> 99.8 </td>
+      </tr>	
+    </table>
+    <h1> Random Job </h1>
+    <p> You will work in {{job}}, which is {{percentage}} of the workforce </p>
   </body>
 </html>

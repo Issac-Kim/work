@@ -1,0 +1,20 @@
+from flask import Flask, render_template
+from occupations import random_job
+
+app = Flask(__name__)
+
+f = open("occupations.csv", "r")
+
+s = f.read().strip().split("\r\n")
+
+@app.route("/")
+def welcome():
+    return "Welcome!"
+
+@app.route("/occupations")
+def webpage():
+    return render_template('main.html', rows = s )
+
+if __name__ == '__main__':
+    app.debug = True
+    app.run()
