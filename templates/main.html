@@ -12,8 +12,14 @@
       </tr>
       {% for key in keys %}
       <tr>
-	<td> {{key}} </td>
-	<td> {{keys[key]}} </td>
+	<td>
+	  <a href = {{keys[key][1]}}>
+	    <div style = "height:100%; width:100%">
+	      {{key}}
+	    </div>
+	  </a>
+	</td>
+	<td> {{keys[key][0]}} </td>
       </tr>
       {% endfor %}
       <tr>
@@ -22,6 +28,6 @@
       </tr>	
     </table>
     <h1> Random Job </h1>
-    <p> You will work in {{job}}, which is {{percentage}} of the workforce </p>
+    <p> You will work in {{job}}, which is {{percentage}} of the workforce. Here is a helpful link, {{link}} </p>
   </body>
 </html>

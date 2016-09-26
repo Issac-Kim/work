@@ -13,7 +13,7 @@ def welcome():
 @app.route("/occupations")
 def webpage():
     job = random_job()
-    return render_template('main.html', keys = d, job = job, percentage = d[job])
+    return render_template('main.html', keys = d, job = job, percentage = d[job][0], link = d[job][1])
 if __name__ == '__main__':
     app.debug = True
     app.run()

@@ -21,18 +21,17 @@ del d["Total"]
 
 # convert values to float nums
 for key in d:
-    d[key] = float(d[key])
+    d[key][0] = float(d[key][0])
 
 def random_job():
     random_num = random.random()*100
     threshold = 0.0
     for key in d:
-        threshold += d[key]
+        threshold += d[key][0]
         if random_num < threshold:
             return key
     return "Other"
 
 def get_dict():
     return d
-for i in range(20):
-    print random_job()
+
