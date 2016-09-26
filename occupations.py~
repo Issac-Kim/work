@@ -30,6 +30,7 @@ def random_job():
             return key
     return "Other"
 
-
+def get_dict():
+    return d
 #for i in range(20):
  #   print random_job()

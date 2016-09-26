@@ -8,10 +8,12 @@ d = {}
 
 # transfer to dictionary
 for line in s:
-    key = line.rsplit(",",1)[0]
+    key = line.rsplit(",",1)[0].rsplit(",",1)[0]
     key = string.strip(key,'\"') # remove double quotes
-    
-    value = line.rsplit(",",1)[1]
+    l = []
+    l.append(line.rsplit(",",1)[0].rsplit(",",1)[1])
+    l.append(line.rsplit(",",1)[1])
+    value = l
     d[key] = value
 
 del d["Job Class"]
@@ -32,5 +34,5 @@ def random_job():
 
 def get_dict():
     return d
-#for i in range(20):
- #   print random_job()
+for i in range(20):
+    print random_job()
